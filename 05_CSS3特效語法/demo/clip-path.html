@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clip Path範例</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+      padding: 50px 0;
+    }
+
+    .item {
+      width: 300px;
+      height: 300px;
+      background-size: cover;
+      background-position: center center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .item-1 {
+      background-image: url("../imgs/sea-turtle.jpeg");
+      clip-path: circle(50%);
+    }
+
+    .item-2 {
+      background-image: url("../imgs/red-sea.jpeg");
+      /* clip-path: ellipse(25% 40% at 50% 50%); */
+      clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 36% 35%, 75% 25%, 66% 65%, 25% 75%, 17% 100%, 100% 100%, 100% 0%);
+      ;
+    }
+
+    .item-3 {
+      background-image: url("../imgs/sea1.jpeg");
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    .item-4 {
+      background-image: url("../imgs/sea2.jpeg");
+      /* clip-path: path("M210.5,70.2c0,58.1-105.2,105.2-105.2,105.2S0,128.4,0,70.2S74-22,105.2,40C153-27,210.5,12.1,210.5,70.2z"); */
+      clip-path: path("m34.27842,39.93805c-10.4353,34.78433 17.39217,42.51419 16.61918,83.4824c-0.77299,40.96822 -15.8462,82.32293 26.66799,76.13904c42.51419,-6.18388 153.82406,-49.08456 134.11294,-78.84449c-19.71112,-29.75993 -87.34733,-18.16515 -91.59875,-42.12769c-4.25142,-23.96254 -75.36606,-73.4336 -85.80136,-38.64926z");
+    }
+
+    .item:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item-1"></div>
+    <div class="item item-2"></div>
+    <div class="item item-3"></div>
+    <div class="item item-4"></div>
+  </div>
+</body>
+
+</html>

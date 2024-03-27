@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手機先決RWD</title>
+    <style>
+        /* 全域 手機樣式 */
+        nav {
+            width: 100%;
+            background-color: aqua;
+            color: aliceblue;
+            margin: auto;
+        }
+
+        /* 平板樣式 */
+        @media screen and (min-width:768px) {
+            nav {
+                width: 80%;
+                background-color: brown;
+            }
+        }
+
+        /* 電腦樣式 */
+        @media screen and (min-width:1023px) {
+            nav {
+                width: 50%;
+                background-color: tomato;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>導覽列</nav>
+</body>
+
+</html>

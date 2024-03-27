@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Card</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 12.5rem);
+            width: 80%;
+            max-width: 1200px;
+            margin: 100px auto;
+            gap: 10px;
+        }
+
+        /* 卡片 */
+        .card {
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .side {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+            backface-visibility: hidden;
+        }
+
+        .back {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            background-color: rgb(218, 144, 91);
+            transform: rotateY(180deg);
+            transition: transform 0.5s;
+        }
+
+        .side img {
+            width: 100%;
+        }
+
+        /* 卡片翻轉 */
+        .card:hover .side {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(0);
+        }
+
+        .pic1 {
+            grid-area: 1/3/2/5;
+        }
+
+        .pic2 {
+            grid-area: 2/2/4/4;
+        }
+
+        .pic3 {
+            grid-area: 2/4/3/6;
+        }
+
+        .card:nth-child(10) img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .pos {
+            transform: translateY(-50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="side">
+                <img src="imgs/photo3.jpg" alt="">
+            </div>
+            <div class="side back">Project1</div>
+        </div>
+        <div class="card">
+            <div class="side">
+                <img src="imgs/japan1.jpg" alt="">
+            </div>
+            <div class="side back">Project2</div>
+        </div>
+        <div class="card pic1">
+            <div class="side">
+                <img src="imgs/japan3.jpg" class="pos" alt="">
+            </div>
+            <div class="side back">Project3</div>
+        </div>
+        <div class="card">
+            <div class="side">
+                <img src="imgs/japan2.jpg" alt="">
+            </div>
+            <div class="side back">Project4</div>
+        </div>
+        <div class="card">
+            <div class="side">
+                <img src="imgs/flowers1.jpg" alt="">
+            </div>
+            <div class="side back">Project5</div>
+        </div>
+        <div class="card pic2">
+            <div class="side">
+                <img src="imgs/sea.jpg" alt="">
+            </div>
+            <div class="side back">Project6</div>
+        </div>
+        <div class="card pic3">
+            <div class="side">
+                <img src="imgs/people1.jpg" alt="">
+            </div>
+            <div class="side back">Project7</div>
+        </div>
+        <div class="card">
+            <div class="side">
+                <img src="imgs/people2.jpg" class="pos" alt="">
+            </div>
+            <div class="side back">Project8</div>
+        </div>
+        <div class="card">
+            <div class="side">
+                <img src="imgs/strawberry.jpg" alt="">
+            </div>
+            <div class="side back">Project9</div>
+        </div>
+        <div class="card">
+            <div class="side">
+                <img src="imgs/japan.jpg" alt="">
+            </div>
+            <div class="side back">Project10</div>
+        </div>
+</body>
+
+</html>

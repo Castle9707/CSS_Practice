@@ -1,0 +1,92 @@
+/* 全域 手機樣式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#banner {
+    width: 100%;
+    background: url('../images/phone/Photo.jpg') no-repeat;
+    height: 353px;
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hero {
+    width: 100%;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-family: 'DM Serif Display';
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 16px;
+    font-family: 'Jost';
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+.bt-black {
+    font-size: 1.125rem;
+    color: #fff;
+    background-color: #292f36;
+    padding: 0.8rem 2rem;
+    border-radius: 18px;
+    border: none;
+    letter-spacing: 1px;
+}
+
+.fa-arrow-right {
+    color: bisque;
+    font-size: 20px;
+}
+
+/* 平板樣式 */
+@media screen and (min-width:481px) {
+    #banner {
+        background: url('../images/tablet/Photo.jpg') no-repeat;
+        height: 445px;
+    }
+
+    .hero {
+        width: 50%;
+    }
+
+    .bt-black {
+        padding: 26px 48px;
+    }
+}
+
+/* 電腦樣式 */
+@media screen and (min-width:821px) {
+    #banner {
+        background: url('../images/Photo.jpg') no-repeat;
+        height: 880px;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    .hero h2 {
+        font-size: 5rem;
+    }
+
+    .hero p {
+        font-size: 2.0625rem;
+    }
+
+}

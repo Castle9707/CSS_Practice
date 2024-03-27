@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex內容區塊練習</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+
+        /* font-family: 'Mukta', sans-serif; */
+        /* 電腦與平板上應用的樣式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(237, 237, 237);
+            margin: 0px;
+            font-size: 14px;
+            font-family: 'Mukta', sans-serif;
+        }
+
+        .header {
+            background: #f0acac;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .logo {
+            width: 100px;
+            background-color: brown;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .logo>a {
+            width: 100%;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+
+            display: block;
+        }
+
+        .navbar>ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        .navbar>ul>li {
+            background-color: palegoldenrod;
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .navbar>ul>li>a {
+            display: block;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+        .menu-icon {
+            display: none;
+        }
+
+        /* 共用置中區塊 */
+        .container {
+            width: 80%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        /* 關於我 */
+        .About {
+            height: 400px;
+            background-color: #9cc2ff;
+        }
+
+        .Photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            height: 100%;
+            background-color: #ffe366;
+        }
+
+        .Description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            background-color: #ffea8f;
+        }
+
+        /* 技能 */
+        .Skills {
+            height: 250px;
+            background-color: #f0e6bb;
+        }
+
+        .skill-list {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+
+        .skill-list>li {
+            display: flex;
+            width: 30%;
+            height: 200px;
+
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        /* 專案 */
+        .Project {
+            height: 250px;
+            background-color: #5BFCC3;
+        }
+
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-around;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+
+        .project-list>li {
+            display: flex;
+            width: 30%;
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0acac;
+        }
+
+        /* 聯絡表單 */
+        #Contact {
+            background-image: linear-gradient(to right bottom, #81ebf0, #83dbff, #b3c5ff, #e2abe4, #f699ae);
+            padding: 80px 0;
+        }
+
+        .w-50 {
+            width: 50%;
+            display: flex;
+            align-items: center;
+        }
+
+        #ContactForm {
+            width: 100%;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px #969696;
+            background-color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input[type="text"] {
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            flex-grow: 1;
+            padding: 8px;
+            font-size: 18px;
+        }
+
+        input[type="text"]:focus {
+            outline: 1px solid #16181a;
+        }
+
+        /* 頁尾 */
+        footer {
+            color: #fff;
+            background-color: #16181a;
+            text-align: center;
+            line-height: 3rem;
+            width: 100%;
+        }
+
+        /* 手機 */
+        @media screen and (max-width: 500px) {
+            .header {
+                flex-wrap: wrap;
+                align-items: stretch;
+            }
+
+            .menu-icon {
+                display: block;
+                background: #8b0f9f;
+                padding: 5px;
+                display: flex;
+                color: #fff;
+                font-family: 'Dosis';
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navbar {
+                width: 100%;
+            }
+
+            .navbar>ul {
+                flex-direction: column;
+            }
+
+            .navbar>ul>li {
+                display: block;
+                background-color: rgb(238, 188, 96);
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid #333;
+                flex: 1 1 0%;
+            }
+
+            .About {
+                height: 750px;
+            }
+
+            .Skills {
+                height: 650px;
+            }
+
+            .skill-list {
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .skill-list>li {
+                width: 100%;
+            }
+
+            .Project {
+                height: 400px;
+            }
+
+            .project-list {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .project-list>li {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"><a href="index.html">My Web</a></div>
+        <div class="menu-icon">Menu</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">Experience</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="About">
+        <div class="container">
+            <div class="Photo">Photo</div>
+            <div class="Description">Description</div>
+        </div>
+    </section>
+    <section class="Skills">
+        <div class="container">
+            <ul class="skill-list">
+                <li>Skill1</li>
+                <li>Skill2</li>
+                <li>Skill3</li>
+            </ul>
+        </div>
+    </section>
+    <section class="Project">
+        <div class="container">
+            <ul class="project-list">
+                <li>text</li>
+                <li>img</li>
+                <li>text</li>
+                <li>img</li>
+                <li>img</li>
+                <li>text</li>
+            </ul>
+        </div>
+    </section>
+    <section id="Contact">
+        <div class="container">
+            <div class="w-50">
+                <!-- 聯絡資訊 -->
+            </div>
+            <div class="w-50">
+                <form action="#" id="ContactForm">
+                    <div class="form-group">
+                        <label for="Name">姓名</label>
+                        <input type="text" class="name" id="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">E-mail</label>
+                        <input type="text" class="email" id="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone">電話</label>
+                        <input type="text" class="phone" id="Phone">
+                    </div>
+                    <input type="submit" class="btn-confirm" value="確認送出">
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Copyright&nbsp;&copy;&nbsp;2023&nbsp;MacroViz.com
+    </footer>
+</body>
+
+</html>

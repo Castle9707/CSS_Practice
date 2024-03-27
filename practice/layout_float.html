@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout_float</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Sumana:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 標題列 */
+        header {
+            border-bottom: 1px solid #BEBEBE;
+        }
+
+        .logo {
+            width: 200px;
+            float: left;
+        }
+
+        .logo img {
+            width: 80px;
+            margin-left: 20px;
+        }
+
+        .n1 {
+            float: right;
+            margin-top: 10px;
+            line-height: 60px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .n1 ul li {
+            float: left;
+            margin-right: 30px;
+        }
+
+        .n1 ul li a {
+            color: #272727;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            letter-spacing: 2px;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .n1 ul li a:hover {
+            color: #FF8000;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        /* News */
+        h1 {
+            text-align: center;
+        }
+
+        .box {
+            width: 960px;
+            padding: 3rem 0;
+            margin: auto;
+            overflow: auto;
+        }
+
+        .News {
+            display: block;
+            overflow: hidden;
+            line-height: 50px;
+            border-bottom: 1px dashed black;
+        }
+
+        .text,
+        .date {
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: #642100;
+            float: left;
+            margin-right: 30px;
+        }
+
+        .date {
+            font-family: "Dosis", sans-serif;
+            font-weight: 600;
+        }
+
+        .text {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 500;
+        }
+
+        section {
+            padding-top: 30px;
+        }
+
+        /* Product */
+        .item {
+            width: 300px;
+            background-color: #BEBEBE;
+            margin-right: 20px;
+            float: left;
+            text-align: center;
+        }
+
+        .item img {
+            width: 280px;
+            margin: 10px;
+        }
+
+        .item p {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .item:nth-child(1) {
+            background-color: #AAAAFF;
+        }
+
+        .item:nth-child(2) {
+            background-color: #009393;
+        }
+
+        .item:nth-child(3) {
+            background-color: #FF8040;
+        }
+
+        .pic {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            line-height: 3rem;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="imgs/logo.png" alt="LOGO"></div>
+        <nav class="n1">
+            <ul>
+                <li><a href="#">最新消息</a></li>
+                <li><a href="#">產品介紹</a></li>
+                <li><a href="#">聯絡我們</a></li>
+            </ul>
+        </nav>
+        <div class="clear"></div>
+    </header>
+    <section>
+        <h1>最新消息</h1>
+        <div class="box">
+            <span class="News">
+                <div class="date">2023-06-23</div>
+                <div class="text">新品上市，優惠7折</div>
+            </span>
+            <span class="News">
+                <div class="date">2023-05-30</div>
+                <div class="text">預訂生日蛋糕送好禮</div>
+            </span>
+            <span class="News">
+                <div class="date">2023-05-01</div>
+                <div class="text">母親節蛋糕特惠中</div>
+            </span>
+        </div>
+    </section>
+    <section>
+        <h1>產品分類</h1>
+        <div class="box">
+            <div class="item">
+                <img src="imgs/cake-cover.jpg" alt="蛋糕" class="pic">
+                <p>蛋糕</p>
+            </div>
+            <div class="item">
+                <img src="imgs/bread.jpg" alt="麵包" class="pic">
+                <p>麵包</p>
+            </div>
+            <div class="item">
+                <img src="imgs/dessert.jpg" alt="甜點" class="pic">
+                <p>甜點</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Copyright&nbsp;&copy;&nbsp;2023
+    </footer>
+</body>
+
+</html>
