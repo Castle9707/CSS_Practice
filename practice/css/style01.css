@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* 全域調整 */
@@ -15,12 +16,13 @@ body {
     font-family: 'Mukta', sans-serif;
 }
 
-h2 {
-    font-size: 28px;
+h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
 p {
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 /* 共用置中區塊 */
@@ -28,25 +30,25 @@ p {
     width: 80%;
     height: 100%;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 1200px;
 }
 
 /* 導覽列 */
-#header {
-    background: #f0acac;
+#Header {
+    background: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    border-bottom: 1px solid rgb(225, 225, 225);
 }
 
 .logo {
     width: 100px;
     background-color: brown;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
 }
 
 .logo>a {
@@ -55,7 +57,6 @@ p {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
-
     display: block;
 }
 
@@ -69,11 +70,10 @@ p {
 }
 
 .navbar>ul>li {
-    background-color: palegoldenrod;
-    padding: 10px 20px;
-    margin: 0 10px;
+    padding: 25px 5px;
+    margin: 0 5px;
     text-align: center;
-    border-radius: 10px;
+
 }
 
 .navbar>ul>li>a {
@@ -81,6 +81,7 @@ p {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    color: #202224;
 }
 
 .menu-icon {
@@ -111,9 +112,20 @@ p {
     width: 0px;
     height: 0px;
     border-style: solid;
-    border-width: 0 88.5px 150px 88.5px;
+    border-width: 0 160px 300px 160px;
     border-color: transparent transparent #eeb539 transparent;
     transform: rotate(0deg);
+    animation: triangle 4s infinite normal ease-in-out;
+}
+
+@keyframes triangle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
 }
 
 .shape {
@@ -121,7 +133,52 @@ p {
     height: 200px;
     width: 200px;
     background-color: #b3c5ff;
+    animation: shape 8s infinite alternate ease-in-out;
 }
+
+@keyframes shape {
+    0% {
+        transform: rotate(0deg);
+        border-radius: 0%;
+    }
+
+    25% {
+        background-color: #9B90C2;
+        transform: rotate(90deg);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 0%;
+        border-bottom-right-radius: 0%;
+        border-bottom-left-radius: 0%;
+    }
+
+    50% {
+        background-color: #70649A;
+        transform: rotate(180deg);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 0%;
+        border-bottom-left-radius: 0%;
+    }
+
+    75% {
+        background-color: #8F77B5;
+        transform: rotate(270deg);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 0%;
+    }
+
+    100% {
+        background-color: #6A4C9C;
+        transform: rotate(360deg);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+}
+
 
 .circle1 {
     position: absolute;
@@ -145,37 +202,83 @@ p {
 
 /* 關於我 */
 #About {
-    height: 400px;
-    background-color: #9cc2ff;
+    background-color: #fff;
+}
+
+#About .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
 
 .Photo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 40%;
-    height: 100%;
-    background-color: #ffe366;
+    height: auto;
+}
+
+.Photo img {
+    max-width: 100%;
+    box-shadow: -15px 15px 0px rgb(238, 187, 162);
 }
 
 .Description {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 20px;
     width: 50%;
     height: 100%;
-    background-color: #ffea8f;
+}
+
+.Description h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.profile p {
+    font-size: 1rem;
+    padding-bottom: 20px;
+}
+
+/* 學歷 */
+.education {
+    width: 100%;
+}
+
+.education-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.education-list>li {
+    padding: 5px 20px;
+    margin: 10px 0;
+    width: 85%;
+    background-color: #eceaf1;
+    border-radius: 10px;
+}
+
+.education-list h4 {
+    font-size: 1.2rem;
+}
+
+.education-title {
+    font-size: 1rem;
+    color: #4b4b4b;
 }
 
 /* 技能 */
 .Skills {
-    height: 250px;
+    width: 100%;
     background-color: #f0e6bb;
 }
 
 .skill-list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     width: 100%;
     margin: 0 auto;
     list-style-type: none;
@@ -183,15 +286,60 @@ p {
 
 .skill-list>li {
     display: flex;
-    width: 30%;
-    height: 200px;
-
-    justify-content: center;
+    width: 100%;
     align-items: center;
-    background-color: #fff;
 }
 
-/* 專案 */
+.skill-title {
+    font-size: 18px;
+}
+
+/* 工作經歷 */
+#Experience {
+    margin: 50px 0;
+    padding: 50px 0;
+    background-color: #f0f0f0;
+}
+
+.job-list {
+    list-style-type: none;
+}
+
+.job-list li {
+    display: flex;
+    margin: 25px 0;
+    padding: 0px 0 20px 0;
+    align-items: center;
+    align-content: baseline;
+    border-bottom: 1px solid #e6e0e0;
+}
+
+.job-year {
+    width: 150px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-right: 30px;
+}
+
+.job-logo {
+    width: 50px;
+    height: 50px;
+    /* clip-path: circle(50%); */
+    margin-right: 30px;
+}
+
+.job-logo img {
+    max-width: 100%;
+    border-radius: 100%;
+}
+
+.job-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* 作品集 */
 #Project {
     background-color: #fff;
 }
@@ -209,7 +357,7 @@ p {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 12.5rem);
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
     margin: 60px auto;
     gap: 10px;
@@ -247,6 +395,9 @@ p {
 
 .side img {
     width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 /* 卡片翻轉 */
@@ -270,17 +421,13 @@ p {
     grid-area: 2/4/3/6;
 }
 
-.card:nth-child(10) img {
-    height: 200px;
-    object-fit: cover;
-}
-
-.pos {
-    transform: translateY(-50px);
-}
-
-
 /* 聯絡表單 */
+#Contact .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #Contact {
     background-image: linear-gradient(to right bottom, #81ebf0, #83dbff, #b3c5ff, #e2abe4, #f699ae);
     padding: 80px 0;
@@ -308,8 +455,6 @@ p {
 .info li {
     font-size: 16px;
     margin-bottom: 10px;
-    /* display: flex;
-    align-items: center; */
 }
 
 li i {
@@ -352,8 +497,24 @@ textarea {
 
 input[type="text"]:focus,
 textarea:focus {
-    outline: 1px solid #16181a;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px;
+    transition: box-shadow 0.8s ease-in-out;
 }
+
+.btn-confirm {
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to left, #f97daa, #f0a0a1);
+    color: #fff;
+}
+
+.btn-confirm:hover {
+    background: linear-gradient(to left, #87d6fd, #a0bcf0);
+}
+
 
 /* 頁尾 */
 footer {
@@ -365,19 +526,25 @@ footer {
 }
 
 /* 手機 */
-@media screen and (max-width: 500px) {
-    #header {
+@media screen and (max-width: 768px) {
+    #Header {
         flex-wrap: wrap;
         align-items: stretch;
     }
 
+    .logo {
+        margin: 10px;
+    }
+
     .menu-icon {
         display: block;
-        background: #8b0f9f;
-        padding: 5px;
+        background: #f3dbf6;
+        padding: 10px;
+        margin: 10px;
         display: flex;
-        color: #fff;
-        font-family: 'Dosis';
+        color: #d53838;
+        border-radius: 5px;
+        /* font-family: 'Dosis'; */
         justify-content: center;
         align-items: center;
     }
@@ -392,15 +559,24 @@ footer {
 
     .navbar>ul>li {
         display: block;
-        background-color: rgb(238, 188, 96);
+        background-color: rgb(255, 255, 255);
         padding: 10px;
         text-align: center;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #e0e0e0;
         flex: 1 1 0%;
     }
 
     #About {
         height: 750px;
+    }
+
+    .job-list li {
+        flex-wrap: wrap;
+    }
+
+    .job-year {
+        width: 100%;
+        margin-bottom: 15px;
     }
 
     .Skills {
