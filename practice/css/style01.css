@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
-/* font-family: 'Mukta', sans-serif; */
+/* font-family: 'arimo','Dosis','Mukta', sans-serif; */
 /* 電腦與平板上應用的樣式 */
 * {
     margin: 0;
@@ -40,6 +41,7 @@ p {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(225, 225, 225);
+    z-index: 10;
 }
 
 .logo {
@@ -103,19 +105,27 @@ p {
     z-index: 5;
 }
 
+.bn-title p {
+    font-weight: 200;
+}
+
 .bn-title h2 {
     font-size: 3rem;
+    font-weight: 400;
 }
 
 .triangle {
     position: absolute;
+    left: 20%;
+    top: -25%;
     width: 0px;
     height: 0px;
     border-style: solid;
-    border-width: 0 160px 300px 160px;
-    border-color: transparent transparent #eeb539 transparent;
+    border-width: 0 250px 465px 250px;
+    border-color: transparent transparent #57ebc1 transparent;
     transform: rotate(0deg);
-    animation: triangle 4s infinite normal ease-in-out;
+    animation: triangle 6s infinite normal ease;
+    z-index: -3;
 }
 
 @keyframes triangle {
@@ -130,6 +140,8 @@ p {
 
 .shape {
     position: absolute;
+    top: 40%;
+    left: 5%;
     height: 200px;
     width: 200px;
     background-color: #b3c5ff;
@@ -145,59 +157,99 @@ p {
     25% {
         background-color: #9B90C2;
         transform: rotate(90deg);
-        border-top-left-radius: 50%;
-        border-top-right-radius: 0%;
-        border-bottom-right-radius: 0%;
-        border-bottom-left-radius: 0%;
+        border-radius: 50% 0 0 0;
     }
 
     50% {
         background-color: #70649A;
         transform: rotate(180deg);
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 0%;
-        border-bottom-left-radius: 0%;
+        border-radius: 50% 50% 0 0;
     }
 
     75% {
         background-color: #8F77B5;
         transform: rotate(270deg);
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
-        border-bottom-left-radius: 0%;
+        border-radius: 50% 50% 50% 0;
     }
 
     100% {
         background-color: #6A4C9C;
         transform: rotate(360deg);
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
-        border-bottom-left-radius: 50%;
+        border-radius: 50%;
     }
 }
 
 
 .circle1 {
     position: absolute;
-    height: 300px;
-    width: 300px;
-    background-color: transparent;
-    border-radius: 50%;
-    border: 10px solid darkblue;
-    display: inline-block;
-}
-
-.circle2 {
-    position: absolute;
+    left: 60%;
+    top: -20%;
     height: 500px;
     width: 500px;
     background-color: transparent;
     border-radius: 50%;
     border: 12px solid rgb(246, 91, 39);
     display: inline-block;
+    animation: circle1 10s ease-in infinite;
+    z-index: -2;
+}
+
+@keyframes circle1 {
+    0% {
+        left: 70%;
+        top: -20%;
+    }
+
+    50% {
+        left: 60%;
+        top: 0%;
+    }
+
+    70% {
+        left: 60%;
+        top: -10%;
+    }
+
+    100% {
+        left: 70%;
+        top: -20%;
+    }
+}
+
+.circle2 {
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 20%;
+    height: 280px;
+    width: 280px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 10px solid rgb(193, 193, 255);
+    display: inline-block;
+    animation: circle2 20s ease infinite alternate both;
+
+}
+
+@keyframes circle2 {
+    0% {
+        margin-top: 10%;
+        margin-left: 40%;
+    }
+
+    50% {
+        margin-top: 20%;
+        margin-left: 30%;
+    }
+
+    70% {
+        margin-top: 15%;
+        margin-left: 40%;
+    }
+
+    100% {
+        margin-top: 20%;
+        margin-left: 30%;
+    }
 }
 
 /* 關於我 */
@@ -224,15 +276,22 @@ p {
 .Description {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
     margin: 10px 20px;
-    width: 50%;
+    padding: 20px 0;
+    width: 45%;
     height: 100%;
 }
 
 .Description h2 {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 400;
+    text-shadow: 3px 3px 5px #ffcf98;
     padding-bottom: 20px;
+}
+
+.profile {
+    width: 100%;
 }
 
 .profile p {
@@ -243,6 +302,7 @@ p {
 /* 學歷 */
 .education {
     width: 100%;
+    padding-bottom: 20px;
 }
 
 .education-list {
@@ -253,10 +313,10 @@ p {
 }
 
 .education-list>li {
-    padding: 5px 20px;
+    padding: 10px 20px;
     margin: 10px 0;
-    width: 85%;
-    background-color: #eceaf1;
+    width: 100%;
+    background-color: #faf8ff;
     border-radius: 10px;
 }
 
@@ -272,27 +332,137 @@ p {
 /* 技能 */
 .Skills {
     width: 100%;
-    background-color: #f0e6bb;
 }
 
 .skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     width: 100%;
-    margin: 0 auto;
     list-style-type: none;
 }
 
 .skill-list>li {
     display: flex;
     width: 100%;
-    align-items: center;
+    height: 50px;
+    justify-content: center;
+    align-content: baseline;
 }
 
 .skill-title {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+    width: 80px;
+    margin: 0 30px;
 }
+
+/* 技能條外層樣式 */
+.skill-bar {
+    width: 240px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 8px 15px 0px 15px;
+    position: relative;
+    display: inline-block;
+    background-color: #d3d3d3;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 技能條內層樣式 */
+.skill-level {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #a47ef6;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 技能條動畫 */
+.skill-HTML {
+    animation: progress-HTML 2s ease-in-out;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    width: 80%;
+}
+
+.skill-CSS {
+    animation: progress-CSS 2s ease-in-out;
+    background: linear-gradient(to right, #373B44, #4286f4);
+    width: 70%;
+}
+
+.skill-JavaScript {
+    animation: progress-JavaScript 2s ease-in-out;
+    background: linear-gradient(to right, #EF3B36, #ff9472);
+    width: 60%;
+}
+
+.skill-PHP {
+    animation: progress-PHP 2s ease-in-out;
+    background: linear-gradient(to right, #B993D6, #8CA6DB);
+    width: 70%;
+}
+
+.skill-MySQL {
+    animation: progress-MySQL 2s ease-in-out;
+    background: linear-gradient(to right, #007991, #78ffd6);
+    width: 50%;
+}
+
+@keyframes progress-HTML {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes progress-CSS {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 70%;
+    }
+}
+
+@keyframes progress-JavaScript {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 60%;
+    }
+}
+
+@keyframes progress-PHP {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 70%;
+    }
+}
+
+@keyframes progress-MySQL {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
 
 /* 工作經歷 */
 #Experience {
@@ -324,7 +494,6 @@ p {
 .job-logo {
     width: 50px;
     height: 50px;
-    /* clip-path: circle(50%); */
     margin-right: 30px;
 }
 
@@ -346,11 +515,18 @@ p {
 
 .title {
     width: 100%;
-    padding: 20px 0;
-    margin-top: 60px;
+    padding: 10px 0;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.title>h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgb(200, 200, 200);
 }
 
 .box {
@@ -442,6 +618,14 @@ p {
 .row {
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.row>h2 {
+    font-size: 3rem;
+    font-family: 'arimo';
+    font-weight: 200;
+    margin: 10px 0;
 }
 
 .info {
@@ -499,7 +683,7 @@ input[type="text"]:focus,
 textarea:focus {
     outline: none;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px;
-    transition: box-shadow 0.8s ease-in-out;
+    transition: box-shadow 0.3s ease-in;
 }
 
 .btn-confirm {
@@ -544,7 +728,6 @@ footer {
         display: flex;
         color: #d53838;
         border-radius: 5px;
-        /* font-family: 'Dosis'; */
         justify-content: center;
         align-items: center;
     }
@@ -566,8 +749,36 @@ footer {
         flex: 1 1 0%;
     }
 
-    #About {
-        height: 750px;
+    /* Banner */
+    .bn-title>h2 {
+        font-size: 2rem;
+    }
+
+    .circle2 {
+        height: 150px;
+        width: 150px;
+    }
+
+    .shape {
+        width: 100px;
+        height: 100px;
+    }
+
+    .triangle {
+        display: none;
+    }
+
+    /* About */
+    #About .container {
+        flex-wrap: wrap;
+    }
+
+    .Photo {
+        width: 100%;
+    }
+
+    .Description {
+        width: 100%;
     }
 
     .job-list li {
@@ -579,30 +790,37 @@ footer {
         margin-bottom: 15px;
     }
 
-    .Skills {
-        height: 650px;
-    }
-
+    /* Skills */
     .skill-list {
         flex-direction: column;
-        flex-wrap: wrap;
         gap: 10px;
+        margin-right: 5px;
     }
 
     .skill-list>li {
         width: 100%;
     }
 
-    #Project {
-        height: 400px;
+    /* Project */
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
-    .project-list {
-        flex-direction: column;
+    .card {
+        width: 48%;
+        height: 200px;
+        max-height: 100%;
+    }
+
+    /* Contact */
+    #Contact .container {
+        display: flex;
         flex-wrap: wrap;
     }
 
-    .project-list>li {
-        width: 45%;
+    .w-50 {
+        width: 100%;
     }
 }
